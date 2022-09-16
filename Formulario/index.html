@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>Formulário de Registro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" device="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <!-- Titulo -->
+    <div class="container">
+      <header class="header">
+        <h1 id="title" class="text-center">Formulário de Registro</h1>
+        <p id="description" class="description text-center">
+          Por Favor, preencha os seguintes requisitos para criação do usuário
+        </p>
+      </header>
+
+      <!-- Corpo Formulario -->
+      <form id="survey-form">
+
+        <!-- Nome -->
+        <div class="form-group">
+          <label id="name-label" for="name">Nome</label>
+          <input type="text" name="name" id="name" class="form-control" placeholder="Insira seu nome" required="">
+        </div>
+
+        <!-- email -->
+        <div class="form-group">
+          <label id="email-label" for="email">Email</label>
+          <input type="email" name="email" id="email" class="form-control" placeholder="Insira seu Email" required="">
+        </div>
+
+        <!-- age -->
+        <div class="form-group">
+          <label id="number-label" for="number">Idade<span class="clue">(Opcional)</span></label>
+          <input type="number" name="age" id="number" min="12" max="99" class="form-control" placeholder="Insira sua idade">
+        </div>
+
+        <!-- lista de opcoes -->
+        <div class="form-group">
+          <p>Qual opção descreve melhor seu cargo atual?</p>
+          <select id="dropdown" name="role" class="form-control" required="">
+            <option disabled="" selected="" value="">Selecione seu cargo atual</option>
+            <option value="student">Estudante</option>
+            <option value="job">Sou empregado</option>
+            <option value="learner">Estudante autônomo</option>
+            <option value="preferNo">Prefiro não dizer</option>
+            <option value="other">Outro</option>
+          </select>
+        </div>
+
+        <!-- escolha1 -->
+        <div class="form-group">
+          <p>Esse aplicativo seria para fins pessoais ou profissionais?</p>
+          <label>
+            <input name="user-recommend" value="definitely" type="radio" class="input-radio" checked="">Pessoais</label>
+          <label>
+            <input name="user-recommend" value="maybe" type="radio" class="input-radio">Profissionais</label>
+          <label><input name="user-recommend" value="not-sure" type="radio" class="input-radio">Prefiro não responder</label>
+        </div>
+
+        <!-- lista de opcoes2 -->
+        <div class="form-group">
+          <p>Por onde nos conheceu?</p>
+          <select id="most-like" name="mostLike" class="form-control" required="">
+            <option disabled="" selected="" value="">Selecione uma opção</option>
+            <option value="challenges">Google</option>
+            <option value="projects">Redes Sociais</option>
+            <option value="community">Indicação de um amigo</option>
+            <option value="openSource">Outro</option>
+          </select>
+        </div>
+
+        <!-- escolhas2 -->
+        <div class="form-group">
+          <p>
+            O que você gostaria que estivesse no nosso aplicativo?
+            <span class="clue">(Pode selecionar mais de uma opção)</span>
+          </p>
+          <label><input name="prefer" value="front-end-projects" type="checkbox" class="input-checkbox">Agenda imbutida</label>
+          <label>
+            <input name="prefer" value="back-end-projects" type="checkbox" class="input-checkbox">Criar/anexar anotações</label>
+          <label><input name="prefer" value="data-visualization" type="checkbox" class="input-checkbox">Tempo gasto diaramente</label>
+          <label><input name="prefer" value="challenges" type="checkbox" class="input-checkbox">Sicronização entre dispositivos</label>
+          <label><input name="prefer" value="open-source-community" type="checkbox" class="input-checkbox">Compartilhamento de contas</label>
+          <label><input name="prefer" value="gitter-help-rooms" type="checkbox" class="input-checkbox">Sistema de complexidade das tarefas</label>
+          <label><input name="prefer" value="videos" type="checkbox" class="input-checkbox">Tags</label>
+          <label><input name="prefer" value="city-meetups" type="checkbox" class="input-checkbox">Plano de fundo/Temas personalizados</label>
+          <label><input name="prefer" value="additional-courses" type="checkbox" class="input-checkbox">Outro</label>
+        </div>
+
+        <!-- texto -->
+        <div class="form-group">
+          <p>Algum cometário ou sugestão? (Seu comentário será importante para melhorarmos nosso aplicativo)</p>
+          <textarea id="comments" class="input-textarea" name="comment" placeholder="Insira o seu comentário..."></textarea>
+        </div>
+
+        <!-- envio -->
+        <div class="form-group">
+          <button type="submit" id="submit" class="submit-button">
+            Enviar
+          </button>
+        </div>
+        <!--  -->
+      </form>
+    </div>
+  </body>
+</html>
