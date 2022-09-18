@@ -24,9 +24,9 @@ body {
     text-align: center;
     font-size: calc(5vw + 2rem);
     font-weight: 900;
-    color: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.2);
     letter-spacing: 2px;
-    margin: -0.3rem 0.8rem 0.5rem;
+    margin: -2px 0 50px 0;
 }
 
 
