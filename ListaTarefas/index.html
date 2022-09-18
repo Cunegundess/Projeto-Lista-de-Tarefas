@@ -1,92 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-    <script src="./script.js"></script>
-
+    <title>AppTarefas</title>
 </head>
+
 <body>
-    <div class="background-image"> 
-        <img src="./assets/bg-desktop-dark.jpg">
+    <h1 class="title">Coisas que tenho pra fazer</h1>
+    
+    <div class="all-tasks">
+        <h2 class="task-list-title">Minhas Listas</h2>
+        <ul class="task-list">
+            <li class="list-name active-list">Hoje</li>
+            <li class="list-name">Essa Semana</li>
+            <li class="list-name">Esse mês</li>
+        </ul>
+
+        <form action="">
+            <input type="text" class="new list" placeholder="Criar Lista" aria-label="Criar Lista">
+            <button class="btn create" aria-label="Criar Lista">+</button>
+        </form>
     </div>
-    <div class="container">
-        <div class="header">
-            <div class="title">
-                TODO
-            </div>
-            <div class="theme">
-                <img src="./assets/icon-sun.svg">
-            </div>
+
+    <div class="todo-list">
+        <div class="todo-header">
+            <h2 class="list-title">Hoje</h2>
+            <p class="task-count">3 tarefas restantes</p>
         </div>
-        <div class="new-todo">
-            <div class="check">
-                <div class="check-mark">                    
-                </div>
+
+        <div class="todo-body">
+            <div class="task">
+                <input type="checkbox" id="task-1">
+                <label for="task-1">
+                    <span class="custom-checkbox"></span>
+                    Colocar a ração do cachorro
+                </label>
             </div>
-            <div class="new-todo-input">
-                <form onsubmit="addItem()">
-                    <input id="todo-input" type="text" placeholder="Create a new todo..."/>
+            <!-- task-1 -->
+
+            <div class="task">
+                <input type="checkbox" id="task-2">
+                <label for="task-2">
+                    <span class="custom-checkbox"></span>
+                    Colocar a ração do gato
+                </label>
+            </div>
+            <!-- task-2 -->
+
+            <div class="task">
+                <input type="checkbox" id="task-3">
+                <label for="task-3">
+                    <span class="custom-checkbox"></span>
+                    Trocar a lâmpada
+                </label>
+            </div>
+            <!-- task-3 -->
+            
+            <div class="new-task-creator">
+                <form action="">
+                    <input type="text" class="new task" placeholder="Criar tarefa" aria-label="Nova tarefa">
+                    <button class="btn create" aria-label="Criar uma nova tarefa">+</button>
                 </form>
             </div>
-        </div>
-        <div class="todo-items-wrapper">
-            <div class="todo-items">
-                <div class="todo-item">
-                    <div class="check">
-                        <div class="check-mark">
-                            <img src="./assets/icon-check.svg">
-                        </div>
-                    </div>
-                    <div class="todo-text">
-                        Cut the lawn
-                    </div>
-                </div>
-                <div class="todo-item">
-                    <div class="check">
-                        <div class="check-mark">
-                            <img src="./assets/icon-check.svg">
-                        </div>
-                    </div>
-                    <div class="todo-text">
-                        Cut the lawn
-                    </div>
-                </div>
-                <div class="todo-item">
-                    <div class="check">
-                        <div class="check-mark">
-                            <img src="./assets/icon-check.svg">
-                        </div>
-                    </div>
-                    <div class="todo-text">
-                        Cut the lawn
-                    </div>
-                </div>
-
-            </div>
-            <div class="todo-items-info">
-                <div class="items-left">
-                    5 items left
-                </div>
-                <div class="items-statuses">
-                    <span class="active">All</span>
-                    <span>Active</span>
-                    <span>Completed</span>
-                </div>
-                <div class="items-clear">
-                    <span>Clear Completed</span>
-                </div>
+            
+            <div class="delete-stuff">
+                <button class="btn delete">Limpar tarefas realizadas</button>
+                <button class="btn delete">Apagar Lista</button>
             </div>
         </div>
     </div>
+
 </body>
 </html>
