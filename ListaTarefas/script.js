@@ -16,6 +16,61 @@ const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId'
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
 let selectedListId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY)
 
+// input do nome //
+
+window.addEventListener("load", () => {
+  const nameInput = document.querySelector("#name");
+  const username = localStorage.getItem("username") || "";
+  nameInput.value = username;
+  nameInput.addEventListener("change", e => {
+    localStorage.setItem("username", e.target.value);
+  })
+})
+
+// efeito de digitar // 
+
+timeout_var = null;
+
+function typeWriter(selector_target, text, placeholder = false, i = 0, text_i=0, delay_ms=200) {
+    if (!i) {
+        if (placeholder) {
+            document.querySelector(selector_target).placeholder = "";
+        }
+        else {
+            document.querySelector(selector_target).innerHTML = "";
+        }
+    }
+    txt = text[text_i];
+    if (i < txt.length) {
+        if (placeholder) {
+            document.querySelector(selector_target).placeholder += txt.charAt(i);
+        }
+        else {
+            document.querySelector(selector_target).innerHTML += txt.charAt(i);
+        }
+        i++;
+        setTimeout(typeWriter, delay_ms, selector_target, text, placeholder, i, text_i);
+    }
+    else {
+        text_i++;
+        if (typeof text[text_i] === "undefined")  {
+            setTimeout(typeWriter, (delay_ms*5), selector_target, text, placeholder);
+        }
+        else {
+            i = 0;
+            setTimeout(typeWriter, (delay_ms*3), selector_target, text, placeholder, i, text_i);
+        }
+    }
+}
+
+text = [
+    "Seu nome..."
+];
+
+return_value = typeWriter("#name", text, true);
+
+// Resto do App//
+
 listsContainer.addEventListener('click', e => {
   if (e.target.tagName.toLowerCase() === 'li') {
     selectedListId = e.target.dataset.listId

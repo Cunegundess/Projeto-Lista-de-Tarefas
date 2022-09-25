@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./icon/favicon-96x96.png">
     <title>AppTarefas</title>
     <script defer src="script.js"></script>
 </head>
 
 <body>
-    <h1 class="title">Coisas que tenho pra fazer</h1>
+
+    <h1 class="title">Olá,<input class="title" id="name" type="text" placeholder=""></h1>
     
     <div class="all-tasks">
         <h2 class="task-list-title">Minhas Listas</h2>
@@ -24,7 +26,7 @@
 
     <div class="todo-list" data-list-display-container>
         <div class="todo-header">
-            <h2 class="list-title" data-list-title>Hoje</h2>
+            <h2 class="list-title" data-list-title>Tarefas</h2>
             <p class="task-count" data-list-count>Sem nada para fazer</p>
         </div>
 
@@ -43,6 +45,7 @@
                 <button class="btn delete" data-delete-list-button>Apagar Lista</button>
             </div>
         </div>
+    </div>
 
         <template id="task-template">
             <div class="task">
@@ -52,5 +55,6 @@
                 </label>
             </div>
         </template>
+
     </body>
 </html>

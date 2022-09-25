@@ -1,5 +1,7 @@
 :root {
     --background-color: #1b1b32;
+    --spacer: 2rem;
+    --shadow: #0c0c38;
 
 }
 
@@ -8,9 +10,13 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     margin: 0;
-    font-family: "Worker Sans", sans-serif;
     font-weight: 300;
     font-size: 1.5rem;
     background: var(--background-color);
@@ -22,16 +28,31 @@ body {
 .title {
     grid-area: header;
     text-align: center;
-    font-size: calc(5vw + 2rem);
+    font-size: calc(4vw + 1.3rem);
     font-weight: 900;
-    color: rgba(0, 0, 0, 0.2);
+    color: rgba(228, 228, 288, 0.7);
     letter-spacing: 2px;
-    margin: -2px 0 50px 0;
+    text-shadow: 10px 10px 5px var(--shadow);
 }
 
+#name {
+    text-align: left;
+    width: 45vw;
+    min-width: 0;
+    margin: 2rem 0;
+    padding: 0 1.5rem;
+    background: transparent;
+    outline: none;
+    border: none;
+}
 
 .all-tasks {
     grid-area: lists;
+    padding: 20px 10px;
+}
+
+.task-list-title {
+    text-shadow: 5px 5px 5px var(--shadow);
 }
 
 .task-list {
@@ -136,6 +157,7 @@ form {
 
 .new.task {
     margin-bottom: 0;
+    overflow: auto;
 }
 
 .active-list {
@@ -143,10 +165,13 @@ form {
 }
 
 .todo-list {
-    --spacer: 2rem;
+    margin: var(--spacer);
     grid-area: active;
     background: #f3f3f3;
     color: #333;
+    border-radius: 10px;
+    margin-right: 0;
+    box-shadow:  10px 10px 5px var(--shadow);;
 }
 
 .todo-header {
@@ -155,6 +180,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-radius: 10px 10px 0 0;
 }
 
 .list-title {
@@ -181,7 +207,7 @@ form {
 }
 
 .task label {
-    display: flex-inline;
+    display: inline-flex;
     align-items: center;
     position: relative;
 }
@@ -266,6 +292,8 @@ form {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: -35px;
+  bottom: -40px;
   color: #f3f3f3;
+  padding: -30px;
+  margin-bottom: 10px;
 }
