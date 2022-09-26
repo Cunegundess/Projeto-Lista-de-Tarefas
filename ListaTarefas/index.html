@@ -12,11 +12,17 @@
 
 <body>
 
-    <h1 class="title">Olá,<input class="title" id="name" type="text" placeholder=""></h1>
+    <!-- Título com o Input do Nome -->
+
+    <h1 class="title">Olá,<input class="title" id="name" type="text" placeholder=""></h1> 
     
+    <!-- All tasks - lista lateral esquerda -->
+
     <div class="all-tasks">
         <h2 class="task-list-title">Minhas Listas</h2>
         <ul class="task-list" data-lists></ul>
+
+        <!-- input de criar nova lista -->
 
         <form action="" data-new-list-form>
             <input data-new-list-input type="text" class="new list" placeholder="Criar Lista" aria-label="Criar Lista">
@@ -24,28 +30,33 @@
         </form>
     </div>
 
+    <!-- corpo da lista de tarefas (lateral direita) -->
+
     <div class="todo-list" data-list-display-container>
+        <!-- cabeçalho -->
         <div class="todo-header">
             <h2 class="list-title" data-list-title>Tarefas</h2>
             <p class="task-count" data-list-count>Sem nada para fazer</p>
         </div>
-
+        <!-- corpo -->
         <div class="todo-body">
             <div class="tasks" data-tasks></div>
-               
+            <!-- input de criar tarefa -->
             <div class="new-task-creator">
                 <form action="" data-new-task-form>
                     <input data-new-task-input type="text" class="new task" placeholder="Criar tarefa" aria-label="Nova tarefa">
                     <button class="btn create" aria-label="Criar uma nova tarefa">+</button>
                 </form>
             </div>
-            
+            <!-- botões de apagar tarefa e lista -->
             <div class="delete-stuff">
                 <button class="btn delete" data-clear-complete-tasks-button>Limpar tarefas realizadas</button>
                 <button class="btn delete" data-delete-list-button>Apagar Lista</button>
             </div>
         </div>
     </div>
+
+        <!-- template de criar tarefa do javascript -->
 
         <template id="task-template">
             <div class="task">

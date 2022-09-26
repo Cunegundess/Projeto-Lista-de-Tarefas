@@ -1,3 +1,5 @@
+// VARIÁVEIS DO HTML - JAVASCRIPT
+
 const listsContainer = document.querySelector('[data-lists]')
 const newListForm = document.querySelector('[data-new-list-form]')
 const newListInput = document.querySelector('[data-new-list-input]')
@@ -11,12 +13,14 @@ const newTaskForm = document.querySelector('[data-new-task-form]')
 const newTaskInput = document.querySelector('[data-new-task-input]')
 const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]')
 
+// ARMAZENAMENTO LOCAL
+
 const LOCAL_STORAGE_LIST_KEY = 'task.lists'
 const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId'
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
 let selectedListId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY)
 
-// input do nome //
+// INPUT DO NOME 
 
 window.addEventListener("load", () => {
   const nameInput = document.querySelector("#name");
@@ -27,11 +31,11 @@ window.addEventListener("load", () => {
   })
 })
 
-// efeito de digitar // 
+// EFEITO DE DIGITAÇÃO 
 
 timeout_var = null;
 
-function typeWriter(selector_target, text, placeholder = false, i = 0, text_i=0, delay_ms=200) {
+function typeWriter(selector_target, text, placeholder = false, i = 0, text_i=0, delay_ms=180) {
     if (!i) {
         if (placeholder) {
             document.querySelector(selector_target).placeholder = "";
@@ -69,7 +73,7 @@ text = [
 
 return_value = typeWriter("#name", text, true);
 
-// Resto do App//
+// CRIAR NOVA LISTA E TAREFA
 
 listsContainer.addEventListener('click', e => {
   if (e.target.tagName.toLowerCase() === 'li') {
@@ -87,6 +91,8 @@ tasksContainer.addEventListener('click', e => {
     renderTaskCount(selectedList)
   }
 })
+
+// DELETAR TAREFAS E LISTAS
 
 clearCompleteTasksButton.addEventListener('click', e => {
   const selectedList = lists.find(list => list.id === selectedListId)
@@ -129,15 +135,21 @@ function createTask(name) {
   return { id: Date.now().toString(), name: name, complete: false }
 }
 
+// FUNÇÃO P/ SALVAR E RECARREGAR OS DADOS
+
 function saveAndRender() {
   save()
   render()
 }
 
+// FUNÇÃO P/ SALVAR OS DADOS 
+
 function save() {
   localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(lists))
   localStorage.setItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY, selectedListId)
 }
+
+// FUNÇÃO PARA RECARREGAR OS DADOS 
 
 function render() {
   clearElement(listsContainer)
