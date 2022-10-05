@@ -7,7 +7,7 @@
 }
 
 *, *::before, *::after {
-    font-family: inherit;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
 
@@ -79,6 +79,7 @@ body {
 .all-tasks {
     padding: 1vw;
     margin-right: 5vw;
+    height: fit-content;
 }
 
 .todo-list {   
@@ -88,6 +89,7 @@ body {
     box-shadow:  10px 10px 5px var(--shadow);
     width: 100%;
     max-width: 70%;
+    height: fit-content;
 }
 
 .task-list-title {
