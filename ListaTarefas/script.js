@@ -12,7 +12,7 @@ const taskTemplate = document.getElementById('task-template')
 const newTaskForm = document.querySelector('[data-new-task-form]')
 const newTaskInput = document.querySelector('[data-new-task-input]')
 const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]')
-const deleteAll = document.querySelector('[data-clear-all]')
+// const deleteAll = document.querySelector('[data-clear-all]')
 
 // ARMAZENAMENTO LOCAL
 
@@ -107,12 +107,12 @@ deleteListButton.addEventListener('click', e => {
   saveAndRender()
 })
 
-deleteAll.addEventListener('click', e => {
-  const deleteLists = lists.filter(list => list.id === selectedListId)
-  const deleteTasks = lists = lists.filter(list => list.id !== selectedListId)
-  lists = null
-  saveAndRender()
-})
+// deleteAll.addEventListener('click', e => {
+//   const deleteLists = lists.filter(list => list.id === selectedListId)
+//   const deleteTasks = lists = lists.filter(list => list.id !== selectedListId)
+//   lists = null
+//   saveAndRender()
+// })
 
 // 
 
