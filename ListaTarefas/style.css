@@ -60,7 +60,7 @@ body {
 
 .title {
     width: max-content;
-    margin-left: 5vw;
+    margin: 1vw 1vw 1vw 5vw;
     text-align: left;
     font-weight: 900;
     color: rgba(228, 228, 288, 0.7);
